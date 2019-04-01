@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <h1>Exercice 0</h1>
+
+    <script type="text/javascript">
+        /* Section 1 */
+
+        var name = "Joe";// je déclare une variable nommée name qui prend pour valeur la chaine de caractères qui constitue le nom Joe
+        var city = 'London';// je déclare une variable nommée city qui prend pour valeur la chaine de caractères qui constitue le nom de ville London
+        var age = 32;// je déclare une variable nommée age qui prend pour valeur l'entier 32
+        var isRed = true; // je déclare une variable nommée isRed qui prend une valeur booléenne
+        var isOld = age > 80;// je déclare une variable nommée isOld qui prend pour valeur la chaine de caractère age et qui prend la valeur supérieure à 80
+        var previousJobs = ['lawyer', 'developper', 'Professionnal climber'];// je déclare un tableau nommé previousJobs incluant 3 variables nommées lawyer, developper, Professionnal climber
+
+        function info(height, weight) { // je déclare une fonction nommée info dont la liste d'arguments à passer sont height et weight. Les instructions Javascript définissant la fonction sont entre accolades.
+            if (height > 180) { // L'instruction if exécute une instruction si une condition donnée est vraie en l'occurence si height > 180
+                console.log('Vous êtes grand'); // si l'instruction est vraie , la console affiche "Vous êtes grand"
+            }
+            if (weight < 0) {// L'instruction if exécute une instruction si une condition donnée est vraie en l'occurence si weight <0 
+                console.log('oups, there is a problem');// si l'instruction est vraie , la console affiche 'oups, there is a problem'
+            } else if (weight < 15) { // instruction sinon si redonne une autre condition 
+                console.log('Are you that slim ?') /// si l'instruction est vraie,  la console affiche 'Are you that slim ?'
+            } else { // si le code renvoie une autre réponse que celles instruites par les conditions précédentes, alors
+                console.log('Good !') // la console affiche'good'
+            }
+        }
+
+        info(165, 45); //La fonction info est appelée avec les arguments 165 pour la hauteur et 45 pour le poids
+
+        var myHeight = 175;// je déclare une variable nommée myHeight qui prend pour valeur un entier 175
+        var myWeight = 86;// je déclare une variable nommée myHeight qui prend pour valeur un entier 86
+
+        info(myHeight, myWeight); //La fonction info est appelée avec les arguments myHeight pour ma hauteur et myWeight pour mon poids
+
+
+        info(myHeight + 15, myWeight - 100);//La fonction info est appelée avec les arguments myHeight pour ma hauteur et myWeight pour mon poids additionné ou soustrait par argument d'une valeur entier
+
+
+        function toUpper(variable) { // déclaration d'une fonction toUpper  qui prend un seul argument appelé variable 
+            return variable.toUpperCase(); //?????
+        }
+
+        var upperName = toUpper(name);// déclaration d'une fonction  dans une fonction expression
+
+        for (i = 0; i < 3; i = i + 1) { // boucle sera exécuté 3 fois, a cahque exécutiuon , la variable i augmentera de 1, lorsquu'elle sera arrivée à 3 , la boucle se terminera
+            console.log(previousJobs[i]);// a chaque exécution s'affiche le résultat
+        }
+
+        /* Section 2: */
+
+      // afficher la ville dans laquele Joe vit.
+     
+        console.log(city); //la console affiche London
+
+    // afficher si Joe est roux ou pas.
+    
+    console.log(isRed); // la console affiche true
+      
+
+        /* Section 3 */
+
+      console.log(myVariable); // Erreur : Uncaught ReferenceError: myVariable is not defined La variable MyVariable n'a pas été déclarée
+    </script>
+
+</body>
+
+</html>
