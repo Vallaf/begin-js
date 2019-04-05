@@ -23,7 +23,7 @@ var team = {
     players: [
         {
             firstName: 'VAL',
-            lastName: 'A',
+            lastName: 'LAF',
             age: 10
         },
 
@@ -37,12 +37,24 @@ var team = {
         }]
 };
 
+
+for (let i = 0; i < 2; i++) {
+
+    addPlayer(prompt('Entrez un prénom'), prompt('Entrez un nom'), prompt('Age du joueur'));
+};
+
+
+/*for (let i = 0; i < 2; i++) {
+
+    addMatch(prompt('Entrez nom équipe adverse'), prompt('Team Points'), prompt('Opponent Points'));
+};*/
+
 function addPlayer(firstName, lastName, age) {
 
     var newPlayer = {
         firstName: firstName,
         lastName: lastName,
-        age: age
+        age: parseInt(age)
     }
 
     team.players.push(newPlayer);
@@ -54,7 +66,7 @@ function addMatch(opponent, teamPoints, opponentPoints) {
     var newGame = {
         opponent: opponent,
         teamPoints: parseInt(teamPoints),
-        opponentPoints:  parseInt(opponentPoints)
+        opponentPoints: parseInt(opponentPoints)
     }
 
     team.games.push(newGame);
@@ -64,9 +76,9 @@ function addMatch(opponent, teamPoints, opponentPoints) {
 function sumPoint() {
     var totalPoints = 0;
     team.games.forEach(function (match) {
-    totalPoints += match.teamPoints;
+        totalPoints += match.teamPoints;
     });
-   
+
     return totalPoints;
 
 }
@@ -74,30 +86,36 @@ function sumPoint() {
 function moyennePoint() {
     var moyOppPoints = 0;
     team.games.forEach(function (match) {
-        moyOppPoints += match.opponentPoints/team.games.length;
-        });
+        moyOppPoints += match.opponentPoints / team.games.length;
+    });
 
-return moyOppPoints;
+    return moyOppPoints;
 }
 
-function oldestPlayer(){
+function oldestPlayer() {
+    var ageOldestPlayer = 0;
+    var maxPlayer = {};
+    team.players.forEach(function (player) {
+        if (player.age > ageOldestPlayer) {
+            ageOldestPlayer = player.age;
+            maxPlayer = player;
+        }
+    });
 
+    console.log(maxPlayer);
 
 }
 
-for (let i = 0; i < 2; i++) {
-
-    addPlayer(prompt('Entrez un prénom'), prompt('Entrez un nom'), prompt('Age du joueur'));
-};
-
-
-for (let i = 0; i < 2; i++) {
-
-    addMatch(prompt('Entrez nom équipe adverse'), prompt('Team Points'), prompt('Opponent Points'));
-};
+function trierJoueursOrdreAlpha() {
+ team.players.sort(function(a, b) {
+     return a.lastName.localeCompare(b.lastName);
+ });
+ console.log(team.players);
+}
 
 console.log(team);
 
-console.log(sumPoint());
-console.log(moyennePoint());
-
+//  console.log(sumPoint());
+//  console.log(moyennePoint());
+console.log(oldestPlayer());
+console.log(trierJoueursOrdreAlpha());
